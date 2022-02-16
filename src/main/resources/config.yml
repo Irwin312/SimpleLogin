@@ -1,0 +1,6 @@
+mysql:
+  host: "localhost"
+  port: 3308
+  database: "simplelogin"
+  username: "root"
+  password: ""
