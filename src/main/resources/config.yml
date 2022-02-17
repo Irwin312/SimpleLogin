@@ -1,6 +1,38 @@
 mysql:
   host: "localhost"
-  port: 3308
+  port: 3306
   database: "simplelogin"
   username: "root"
   password: ""
+
+java:
+  login:
+    #Set title for login anvil gui (Default: "Login")
+    title: "Login"
+
+    #Set default text for input (Default: "Please enter your password")
+    text: "Please enter your password"
+
+    #Prevent user close gui Default: true)
+    prevent_close: true
+
+    #Exit when enter text
+    exit:
+      enable: true
+      text: "exit"
+      ignore_case: true
+  register:
+    #Set title for register anvil gui (Default: "Register")
+    title: "Register"
+
+    #Set default text for input (Default: "Please enter your password")
+    text: "Please enter your password"
+
+    #Prevent user close gui Default: true)
+    prevent_close: true
+
+    #Exit when enter text
+    exit:
+      enable: true
+      text: "exit"
+      ignore_case: true

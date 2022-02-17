@@ -42,6 +42,7 @@ public class MySQL implements Utils {
         if (isConnected()){
             try {
                 connection.close();
+                connection = null;
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -49,6 +50,7 @@ public class MySQL implements Utils {
     }
 
     public void createTables(){
+        connect();
         PreparedStatement ps;
         try {
             ps = getConnection().prepareStatement("CREATE TABLE IF NOT EXISTS SIMPLE_LOGIN_DATABASE "
@@ -57,9 +59,11 @@ public class MySQL implements Utils {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        disconnect();
     }
 
     public void createPlayer(String name){
+        connect();
         try {
             PreparedStatement ps = getConnection().prepareStatement("SELECT * FROM SIMPLE_LOGIN_DATABASE WHERE PLAYER_NAME=?");
             ps.setString(1, name);
@@ -73,9 +77,11 @@ public class MySQL implements Utils {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        disconnect();
     }
 
     public boolean exists(String name){
+        connect();
         PreparedStatement ps;
         try {
             ps = getConnection().prepareStatement("SELECT * FROM SIMPLE_LOGIN_DATABASE WHERE PLAYER_NAME=?");
@@ -87,25 +93,30 @@ public class MySQL implements Utils {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        disconnect();
         return false;
     }
 
     public boolean registered(String name){
+        connect();
         try {
             PreparedStatement ps  = getConnection().prepareStatement("SELECT * SIMPLE_LOGIN_DATABASE WHERE +" +
                     "PLAYER_NAME=?");
             ps.setString(1, name);
             ResultSet resultSet = ps.getResultSet();
+            System.out.print(resultSet);
             if (resultSet == null) {
                 return false;
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        disconnect();
         return true;
     }
 
     public void setPassword(String name, String password){
+        connect();
         try {
             PreparedStatement ps = getConnection().prepareStatement("UPDATE SIMPLE_LOGIN_DATABASE SET "
             + "PASSWORD=? WHERE PLAYER_NAME=?");
@@ -115,9 +126,11 @@ public class MySQL implements Utils {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        disconnect();
     }
 
     public String getPassword(String name){
+        connect();
         try {
             PreparedStatement ps = getConnection().prepareStatement("SELECT PASSWORD FROM SIMPLE_LOGIN_DATABASE" +
                     "WHERE PLAYER_NAME=?");
@@ -129,6 +142,7 @@ public class MySQL implements Utils {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        disconnect();
         return null;
     }
 }

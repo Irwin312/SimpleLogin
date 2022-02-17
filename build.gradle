@@ -27,6 +27,10 @@ dependencies {
     implementation 'net.wesjd:anvilgui:1.5.3-SNAPSHOT'
 }
 
+processResources {
+    expand projectVersion: project.version
+}
+
 shadowJar {
     relocate("net.wesjd.anvilgui", "me.khanh.plugins.simplelogin.utils.anvilgui")
 }

@@ -1,5 +1,5 @@
 name: SimpleLogin
-version: ${version}
+version: ${projectVersion}
 main: me.khanh.plugins.simplelogin.SimpleLogin
 api-version: 1.16
 authors: [ KhanhHuynh ]
