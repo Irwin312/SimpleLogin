@@ -20,10 +20,15 @@ repositories {
         name = "codemc-snapshots"
         url = "https://repo.codemc.io/repository/maven-snapshots/"
     }
+    maven {
+        name = "collab-snapshot"
+        url = "https://repo.opencollab.dev/maven-snapshots/"
+    }
 }
 
 dependencies {
     compileOnly 'org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT'
+    compileOnly 'org.geysermc.floodgate:api:2.0-SNAPSHOT'
     implementation 'net.wesjd:anvilgui:1.5.3-SNAPSHOT'
 }
 

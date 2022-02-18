@@ -34,7 +34,7 @@ public final class SimpleLogin extends JavaPlugin implements Utils {
             info("&aSuccessful connection to the Database");
             mySQL.createTables();
         }
-        mySQL.disconnect();
+//        mySQL.disconnect();
     }
 
     public void registerEvents(){

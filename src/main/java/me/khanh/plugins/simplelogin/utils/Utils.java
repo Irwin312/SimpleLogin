@@ -3,9 +3,11 @@ package me.khanh.plugins.simplelogin.utils;
 import me.khanh.plugins.simplelogin.SimpleLogin;
 import org.bukkit.ChatColor;
 
+import java.util.Objects;
+
 public interface Utils {
     default String getConfigString(String path){
-        return SimpleLogin.getInstance().getConfig().getString(path);
+        return ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(SimpleLogin.getInstance().getConfig().getString(path)));
     }
 
     default String color(String s){

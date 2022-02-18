@@ -5,6 +5,28 @@ mysql:
   username: "root"
   password: ""
 
+bedrock:
+  login:
+    title: "Login"
+
+    text: "Password:"
+
+    text_in_box: "Please enter your password"
+
+    contents:
+      - "Enter 'Exit' to close this."
+
+    prevent_close: true
+
+    exit:
+      enable: true
+      text: "exit"
+      ignore_case: true
+
+    wrong_pass: "&cSai mật khẩu"
+
+    kick: true
+
 java:
   login:
     #Set title for login anvil gui (Default: "Login")
@@ -13,7 +35,7 @@ java:
     #Set default text for input (Default: "Please enter your password")
     text: "Please enter your password"
 
-    #Prevent user close gui Default: true)
+    #Prevent user close gui (Default: true)
     prevent_close: true
 
     #Exit when enter text
@@ -21,6 +43,12 @@ java:
       enable: true
       text: "exit"
       ignore_case: true
+
+    wrong_pass: "&cSai mật khẩu"
+
+    #Kick player when enter incorrect password (Default: true)
+    kick: true
+
   register:
     #Set title for register anvil gui (Default: "Register")
     title: "Register"
