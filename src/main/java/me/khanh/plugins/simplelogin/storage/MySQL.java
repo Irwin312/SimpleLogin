@@ -33,6 +33,7 @@ public class MySQL implements Utils {
                         username, password);
             } catch (SQLException e) {
                 error("Cannot connecting to Database.");
+                plugin.disable();
                 e.printStackTrace();
             }
         }

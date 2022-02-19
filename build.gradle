@@ -32,6 +32,10 @@ dependencies {
     implementation 'net.wesjd:anvilgui:1.5.3-SNAPSHOT'
 }
 
+compileJava {
+    compileJava.options.encoding = 'UTF-8'
+}
+
 processResources {
     expand projectVersion: project.version
 }

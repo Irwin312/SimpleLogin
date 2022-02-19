@@ -5,6 +5,51 @@ mysql:
   username: "root"
   password: ""
 
+message:
+  login_success: "&aLogged in successfully."
+  register_success: "&aRegister successfully."
+  no_permission: "&cYou do not have permission to use this command!"
+  no_chat: "&cPlease login/register to be able to chat"
+
+java:
+  login:
+    #Set title for login anvil gui (Default: "Login")
+    title: "Login"
+
+    #Set default text for input (Default: "Please enter your password")
+    text: "Please enter your password"
+
+    #Prevent user close gui (Default: true)
+    prevent_close: true
+
+    #Exit when enter text
+    exit:
+      enable: true
+      text: "exit"
+      ignore_case: true
+
+    wrong_pass: "&cWrong password"
+
+    #Kick player when enter incorrect password (Default: true)
+    kick: true
+
+  register:
+
+    #Set title for register anvil gui (Default: "Register")
+    title: "Register"
+
+    #Set default text for input (Default: "Please enter your password")
+    text: "Please enter your password"
+
+    #Prevent user close gui Default: true)
+    prevent_close: true
+
+    #Exit when enter text
+    exit:
+      enable: true
+      text: "exit"
+      ignore_case: true
+
 bedrock:
   login:
     title: "Login"
@@ -27,34 +72,16 @@ bedrock:
 
     kick: true
 
-java:
-  login:
-    #Set title for login anvil gui (Default: "Login")
-    title: "Login"
-
-    #Set default text for input (Default: "Please enter your password")
-    text: "Please enter your password"
-
-    #Prevent user close gui (Default: true)
-    prevent_close: true
-
-    #Exit when enter text
-    exit:
-      enable: true
-      text: "exit"
-      ignore_case: true
-
-    wrong_pass: "&cSai mật khẩu"
-
-    #Kick player when enter incorrect password (Default: true)
-    kick: true
-
   register:
     #Set title for register anvil gui (Default: "Register")
     title: "Register"
 
-    #Set default text for input (Default: "Please enter your password")
-    text: "Please enter your password"
+    text: "Password:"
+
+    text_in_box: "Please enter your password"
+
+    contents:
+      - "Enter 'Exit' to close this."
 
     #Prevent user close gui Default: true)
     prevent_close: true

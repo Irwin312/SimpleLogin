@@ -4,3 +4,6 @@ main: me.khanh.plugins.simplelogin.SimpleLogin
 api-version: 1.16
 authors: [ KhanhHuynh ]
 description: A simple login
+depend: [ floodgate ]
+commands:
+  simplelogin:
